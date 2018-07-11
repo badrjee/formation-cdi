@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<hibernate-configuration xmlns="http://www.hibernate.org/xsd/hibernate-configuration"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-configuration
-	http://hibernate.org/xsd/hibernate-configuration/hibernate-configuration-4.0.xsd">
-    <session-factory>
-        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proxibanquecdi</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
-<!--         <property name="show_sql">true</property> -->
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proxibanquecdi</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+		<!-- <property name="show_sql">true</property> -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
-        <mapping class="fr.gtm.proxibanque.domain.Client" />
-    </session-factory>
+		<mapping class="fr.gtm.proxibanque.domain.Client" />
+	</session-factory>
 </hibernate-configuration>

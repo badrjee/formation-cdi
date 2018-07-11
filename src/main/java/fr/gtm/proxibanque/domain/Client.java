@@ -1,6 +1,5 @@
 package fr.gtm.proxibanque.domain;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "client")
-public class Client implements Serializable {
+public class Client implements HbEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
