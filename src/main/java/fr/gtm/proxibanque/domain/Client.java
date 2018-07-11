@@ -3,7 +3,6 @@ package fr.gtm.proxibanque.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,9 +20,7 @@ public class Client implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Basic
 	private String lastname;
-	@Column
 	private String firstname;
 	private LocalDate birthDate;
 	private String number;
