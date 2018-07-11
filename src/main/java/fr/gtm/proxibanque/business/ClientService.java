@@ -6,6 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import fr.gtm.proxibanque.domain.Client;
 import fr.gtm.proxibanque.persistence.ClientDao;
 
 @Named
@@ -17,7 +18,10 @@ public class ClientService implements Serializable {
 	@Inject
 	private transient ClientDao clientDao;
 
-	public String test() {
-		return this.clientDao.getTest();
+	public String createClient(final String name) {
+		final Client client = new Client();
+		client.setFirstname(name);
+		this.clientDao.create(client);
+		return "Client bien créé en base de données.";
 	}
 }

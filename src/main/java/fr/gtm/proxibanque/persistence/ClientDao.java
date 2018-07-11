@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+
+import fr.gtm.proxibanque.domain.Client;
 
 /**
  * Bean CDI déclaré avec Named par le "Default" Qualifier et de scope
@@ -18,17 +21,17 @@ public class ClientDao implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String test;
+	private EntityManager entityManager;
 
 	public ClientDao() {
-		this.test = "Affichage depuis le bean ClientDao !";
+		this.entityManager = HibernateUtil.getSessionFactory()
+				.createEntityManager();
 	}
 
-	public String getTest() {
-		return test;
+	public void create(Client client) {
+		this.entityManager.getTransaction().begin();
+		this.entityManager.persist(client);
+		this.entityManager.getTransaction().commit();
 	}
 
-	public void setTest(String test) {
-		this.test = test;
-	}
 }

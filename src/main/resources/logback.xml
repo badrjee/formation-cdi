@@ -13,9 +13,9 @@
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<logger level="debug" name="org.jboss.weld" additivity="false">
+	<!-- <logger level="debug" name="org.jboss.weld" additivity="false">
 		<appender-ref ref="STDOUT" />
-	</logger>
+	</logger> -->
 
 	<root level="info">
 		<appender-ref ref="STDOUT" />
