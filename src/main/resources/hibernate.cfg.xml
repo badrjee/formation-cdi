@@ -13,5 +13,9 @@
 		<!-- <property name="show_sql">true</property> -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<mapping class="fr.gtm.proxibanque.domain.Client" />
+		<mapping class="fr.gtm.proxibanque.domain.Account" />
+		<mapping class="fr.gtm.proxibanque.domain.Address" />
+		<mapping class="fr.gtm.proxibanque.domain.BankCard" />
+		<mapping class="fr.gtm.proxibanque.domain.CheckBook" />
 	</session-factory>
 </hibernate-configuration>
