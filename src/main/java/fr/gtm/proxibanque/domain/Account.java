@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -30,7 +31,9 @@ public class Account implements HbEntity {
 	@JoinColumn(name = "id_checkbook", referencedColumnName = "id")
 	private CheckBook checkBook;
 
-	// private Client client;
+	@ManyToOne
+	@JoinColumn(name = "id_client", referencedColumnName = "id_client")
+	private Client client;
 
 	public Integer getId() {
 		return id;
@@ -96,12 +99,12 @@ public class Account implements HbEntity {
 		this.checkBook = checkBook;
 	}
 
-	// public Client getClient() {
-	// return client;
-	// }
-	//
-	// public void setClient(Client client) {
-	// this.client = client;
-	// }
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 
 }
