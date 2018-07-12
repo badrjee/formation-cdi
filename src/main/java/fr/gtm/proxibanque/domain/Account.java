@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account implements HbEntity {
@@ -19,8 +21,15 @@ public class Account implements HbEntity {
 	private String number;
 	private String label;
 	private LocalDate openedOn;
-	// private BankCard bankCard;
-	// private CheckBook checkBook;
+
+	@OneToOne
+	@JoinColumn(name = "id_bankcard", referencedColumnName = "id")
+	private BankCard bankCard;
+
+	@OneToOne
+	@JoinColumn(name = "id_checkbook", referencedColumnName = "id")
+	private CheckBook checkBook;
+
 	// private Client client;
 
 	public Integer getId() {
@@ -71,22 +80,22 @@ public class Account implements HbEntity {
 		this.openedOn = openedOn;
 	}
 
-	// public BankCard getBankCard() {
-	// return bankCard;
-	// }
-	//
-	// public void setBankCard(BankCard bankCard) {
-	// this.bankCard = bankCard;
-	// }
-	//
-	// public CheckBook getCheckBook() {
-	// return checkBook;
-	// }
-	//
-	// public void setCheckBook(CheckBook checkBook) {
-	// this.checkBook = checkBook;
-	// }
-	//
+	public BankCard getBankCard() {
+		return bankCard;
+	}
+
+	public void setBankCard(BankCard bankCard) {
+		this.bankCard = bankCard;
+	}
+
+	public CheckBook getCheckBook() {
+		return checkBook;
+	}
+
+	public void setCheckBook(CheckBook checkBook) {
+		this.checkBook = checkBook;
+	}
+
 	// public Client getClient() {
 	// return client;
 	// }
