@@ -35,6 +35,14 @@ public class Client implements HbEntity {
 	@OneToMany(mappedBy = "client")
 	private List<Account> accounts;
 
+	public Client() {
+
+	}
+
+	public Client(String firstname) {
+		this.firstname = firstname;
+	}
+
 	public List<Account> getAccounts() {
 		return accounts;
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import fr.gtm.proxibanque.domain.Client;
+import fr.gtm.proxibanque.domain.CheckBook;
 
 /**
  * Bean CDI déclaré avec Named par le "Default" Qualifier et de scope
@@ -17,18 +17,18 @@ import fr.gtm.proxibanque.domain.Client;
  */
 @Named
 @ApplicationScoped
-public class ClientDao extends Repository <Client> implements Serializable {
+public class CheckBookDao extends Repository<CheckBook> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public List<Client> findAll() {
-		return this.findAll(Client.class);
+	public List<CheckBook> findAll() {
+		return this.findAll(CheckBook.class);
 	}
 
 	@Override
-	public Client findOne(Integer id) {
-		return this.findOne(new Client(), id);
+	public CheckBook findOne(Integer id) {
+		return this.findOne(new CheckBook(), id);
 	}
 
 }
